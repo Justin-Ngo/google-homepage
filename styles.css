@@ -1,0 +1,221 @@
+/* Notes on CSS: Think boxes within boxes you move around to get the desired look you want  */
+/* reset browsers default  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* you don't need a dot here cause its not a class, this is a tag */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* #################################### THIS IS ALL CONTENT STUFF ########################################### */
+.content {
+    height: 233px;
+    margin-top: 89px;
+    /* background-color: salmon; */
+}
+
+.logo {
+    /* if you wanna use flexbox you have to declare it  */
+    display: flex;
+    justify-content: center;
+    padding-top: 109px;
+    /* background-color: seagreen; */
+    /* border: 1px solid; debugging */
+}
+
+/* .form-container{
+    border: 1px solid; debugging
+} */
+
+.search-bar {
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    height: 44px;
+    width: 582px;
+    margin: auto;
+}
+
+/* This is the form "container" itself. The reason why I couldn't do it on the .search-bar is because flex only works direct chidlren 1 level */
+.search-form {
+    display: flex;
+}
+
+.search-bar:hover{
+    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+
+
+/* decendent selectors */
+.search-bar input[type='text']{
+    /* flex property sets the flexible length on flexible items
+    so basically stretchs input until the very end of the form container */
+    /* flex: 1; */
+    width: 85%;
+    font-size: 16px;
+    word-wrap: break-word;
+    /* !important overides all previous styling rules */
+    /* height: 34px !important; */
+    /* font-family: Arial, sans-serif; */
+    line-height: 34px;
+    background-color: transparent;
+    border: none;
+    /* border: 1px solid green; for Debugging */
+}
+
+/* Get rid of that annoying blue outline when typing  */
+.search-bar input[type='text']:focus{
+    outline: none;
+}
+
+.mag-glass{
+    height: 20px;
+    margin: 12px;
+}
+
+.microphone {
+    height: 20px;
+    width: 20px;
+    margin: 12px;
+}
+
+.actions {
+    display: flex;
+    margin-top: 18px;
+    justify-content: center;
+    /* border: solid 1px; debugging  */
+}
+
+.btn {
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    font-size: 14px;
+    /* font-family: arial, sans-serif; */
+    color: #5F6368;
+    height: 36px;
+    margin: 11px 6px;
+    padding: 0px 15px; 
+}
+
+.btn:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-color: #f8f8f8;
+    border: 1px solid c6c6c6;
+    color: #222;
+  }
+  
+  .btn:focus {
+    border: 1px solid #4d90fe;
+  }
+
+  /* ############################################### Navigation bar stuff ############################################ */
+  /* Note: if you want to style i.e all <p> elements with class=rawr you would do. p.rawr */
+
+  /* #################### Header navigaton #########################  */
+  .header-nav{
+      display: flex;
+      justify-content: space-between;
+      height: 40px;
+  }
+
+  a {
+    display: flex;
+    text-decoration: none;
+  }
+  
+  a.top-nav {
+    color: #000;
+    opacity: 0.75;
+  }
+    
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin-right: 12px;
+  }
+
+
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+  }
+  
+  img.grid-nav {
+    object-position: -134px -40px;
+    object-fit: none;
+    /* This controls what icons is visible  */
+    height: 26px;
+    width: 26px;
+    opacity: 0.50;
+  }
+  
+  img.grid-nav:hover {
+    opacity: 1.0;
+  }
+
+  #sign-in {
+    padding: 8px 12px 8px 12px;
+    background-color: #3c7ae4;
+    border-radius: 2px;
+    border: 1px solid #4285f4;
+    color: #fff;
+    font-weight: bold;
+    opacity: 1;
+  }
+  
+  #sign-in:hover {
+    box-shadow: 0 1px 0 rgba(0,0,0,.15);
+    text-decoration: none;
+  }
+  
+  #sign-in:active {
+    background-color: #3f76d3;
+  }
+
+
+  /* ######################## button navigation ########################## */
+
+.footer-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;  
+}
+
+  nav.footer-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    font-size: 14px;
+    background: #f2f2f2;
+    border-top: 1px solid #e4e4e4;
+  }
+  
+    a.bot {
+    color: #5f6368;
+    }
+
+    ul.bot-right {
+    padding-right: 15px;
+    }
+
+    li.bot-left {
+    padding-left: 27px;
+    }
+
+    li.bot-right {
+    padding-left: 27px;
+    }
